@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklist 7 Bước Dùng AI Agent An Toàn | Quà tặng Văn Nguyễn</title>
+  <meta name="description" content="Checklist 7 bước giúp chủ doanh nghiệp nhỏ dùng AI Agent hiệu quả nhưng vẫn kiểm soát được rủi ro về dữ liệu, tài khoản, khách hàng và vận hành." />
+  <style>
+    :root {
+      --bg: #07140f;
+      --card: #0f241b;
+      --card-2: #123424;
+      --green: #22c55e;
+      --green-2: #16a34a;
+      --yellow: #facc15;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(255,255,255,0.12);
+      --danger: #fb7185;
+      --shadow: 0 24px 80px rgba(0,0,0,0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(34,197,94,0.22), transparent 34%),
+        radial-gradient(circle at top right, rgba(250,204,21,0.15), transparent 30%),
+        linear-gradient(135deg, #06110d 0%, #0b1f16 42%, #08140f 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .page {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+      padding: 36px 0 56px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(15, 36, 27, 0.78);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -120px -160px auto;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(34,197,94,0.18);
+      filter: blur(8px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(250,204,21,0.14);
+      color: var(--yellow);
+      border: 1px solid rgba(250,204,21,0.28);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -1.8px;
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      color: var(--yellow);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 22px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 20px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--yellow), #f59e0b);
+      color: #1a1200;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(250,204,21,0.24);
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .hero-box {
+      background: linear-gradient(160deg, rgba(34,197,94,0.2), rgba(250,204,21,0.08));
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-box h2 {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mini-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #06210f;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .section {
+      margin-top: 30px;
+      padding: 30px;
+      border-radius: 28px;
+      background: rgba(15, 36, 27, 0.72);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 58px rgba(0,0,0,0.22);
+    }
+
+    .section-header {
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      margin-bottom: 10px;
+    }
+
+    .section-header p,
+    .note,
+    .prompt-box p {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--green), var(--yellow));
+    }
+
+    .step-num {
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      align-items: center;
+      justify-content: center;
+      background: rgba(250,204,21,0.18);
+      color: var(--yellow);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .step h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .action {
+      padding: 12px;
+      border-radius: 14px;
+      background: rgba(34,197,94,0.12);
+      border: 1px solid rgba(34,197,94,0.22);
+      color: #dcfce7;
+      font-size: 15px;
+    }
+
+    .risk-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .risk-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.055);
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--green);
+      margin-top: 3px;
+    }
+
+    .prompt-box {
+      background: #06110d;
+      border: 1px solid rgba(250,204,21,0.24);
+      border-radius: 22px;
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      color: #f8fafc;
+      padding: 18px;
+      border-radius: 18px;
+      margin-top: 14px;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .warning {
+      border-left: 5px solid var(--danger);
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(251,113,133,0.1);
+      color: #ffe4e6;
+      margin-top: 18px;
+    }
+
+    .footer-cta {
+      text-align: center;
+      padding: 36px 24px;
+      border-radius: 30px;
+      margin-top: 30px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.24), rgba(250,204,21,0.18));
+      border: 1px solid var(--line);
+    }
+
+    .keyword {
+      display: inline-block;
+      margin: 12px 0 16px;
+      padding: 10px 18px;
+      border-radius: 14px;
+      background: #facc15;
+      color: #1a1200;
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+    }
+
+    .footer {
+      text-align: center;
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 22px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #111827;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .hero,
+      .section,
+      .footer-cta {
+        box-shadow: none;
+        background: #fff;
+        color: #111827;
+        border: 1px solid #e5e7eb;
+      }
+
+      .hero p,
+      .section-header p,
+      .step p,
+      .note,
+      .prompt-box p {
+        color: #374151;
+      }
+
+      .button {
+        display: none;
+      }
+
+      pre {
+        color: #111827;
+        background: #f9fafb;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <div class="badge">🎁 Quà tặng từ Văn Nguyễn</div>
+        <h1>Checklist 7 bước dùng <span>AI Agent</span> an toàn</h1>
+        <p>
+          Dành cho chủ doanh nghiệp nhỏ, marketer, đội sale, HR và người đang dùng AI để tự động hóa công việc nhưng không muốn mất kiểm soát dữ liệu, tài khoản và khách hàng.
+        </p>
+        <div class="cta-row">
+          <a class="button" href="#checklist">Xem checklist ngay</a>
+          <a class="button secondary" href="#prompt">Lấy prompt mẫu</a>
+        </div>
+      </div>
+
+      <div class="hero-box">
+        <h2>Thông điệp quan trọng</h2>
+        <p>AI không nguy hiểm vì nó thông minh. AI nguy hiểm khi con người giao quyền cho nó mà không có phanh.</p>
+        <div class="mini-list">
+          <div class="mini-item"><span class="check">✓</span><div>Biết việc nào được phép giao cho AI.</div></div>
+          <div class="mini-item"><span class="check">✓</span><div>Biết việc nào bắt buộc con người phải duyệt.</div></div>
+          <div class="mini-item"><span class="check">✓</span><div>Biết cách giảm rủi ro trước khi tự động hóa thật.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="checklist">
+      <div class="section-header">
+        <div class="eyebrow">Checklist chính</div>
+        <h2>7 bước kiểm soát AI Agent trước khi đưa vào vận hành</h2>
+        <p>Hãy dùng checklist này trước khi cho AI đọc email, xử lý dữ liệu khách hàng, gửi tin nhắn, viết code, đặt lịch hoặc thao tác trên hệ thống của anh chị.</p>
+      </div>
+
+      <div class="grid">
+        <article class="step">
+          <div class="step-num">1</div>
+          <h3>Xác định đúng phạm vi công việc</h3>
+          <p>Đừng giao cho AI một mục tiêu quá rộng như “tự vận hành marketing”. Hãy chia nhỏ thành từng nhiệm vụ rõ ràng.</p>
+          <div class="action">Việc cần làm: Viết ra AI được làm gì, không được làm gì, và kết quả cần trả về là gì.</div>
+        </article>
+
+        <article class="step">
+          <div class="step-num">2</div>
+          <h3>Không cấp toàn quyền ngay từ đầu</h3>
+          <p>Email, tài khoản quảng cáo, CRM, file tài chính và dữ liệu khách hàng là vùng nhạy cảm. Không nên mở toàn bộ quyền truy cập.</p>
+          <div class="action">Việc cần làm: Chỉ cấp quyền đọc hoặc quyền thao tác giới hạn ở giai đoạn thử nghiệm.</div>
+        </article>
+
+        <article class="step">
+          <div class="step-num">3</div>
+          <h3>Phân loại dữ liệu trước khi dùng AI</h3>
+          <p>Không phải dữ liệu nào cũng nên đưa vào AI. Cần tách dữ liệu công khai, dữ liệu nội bộ và dữ liệu cực kỳ nhạy cảm.</p>
+          <div class="action">Việc cần làm: Đánh dấu dữ liệu khách hàng, số điện thoại, doanh thu, hợp đồng là dữ liệu cần bảo vệ.</div>
+        </article>
+
+        <article class="step">
+          <div class="step-num">4</div>
+          <h3>Bắt buộc con người duyệt các hành động quan trọng</h3>
+          <p>AI có thể soạn, đề xuất, tổng hợp. Nhưng các thao tác ảnh hưởng đến tiền, khách hàng, pháp lý hoặc thương hiệu cần người duyệt.</p>
+          <div class="action">Việc cần làm: Thiết lập nguyên tắc “AI đề xuất, người quyết định”.</div>
+        </article>
+
+        <article class="step">
+          <div class="step-num">5</div>
+          <h3>Lưu lại lịch sử thao tác</h3>
+          <p>Khi AI làm sai, anh chị cần biết nó đã đọc gì, hiểu gì, làm gì và gửi gì. Không có log thì rất khó truy lỗi.</p>
+          <div class="action">Việc cần làm: Lưu prompt, phản hồi, file đầu vào, file đầu ra và hành động đã thực hiện.</div>
+        </article>
+
+        <article class="step">
+          <div class="step-num">6</div>
+          <h3>Thử trong môi trường nhỏ trước</h3>
+          <p>Đừng đưa AI Agent vào hệ thống thật ngay. Hãy thử với dữ liệu giả, tài khoản phụ hoặc nhóm khách hàng nhỏ.</p>
+          <div class="action">Việc cần làm: Test ít nhất 3 vòng: dữ liệu giả → dữ liệu ít rủi ro → dữ liệu thật có giám sát.</div>
+        </article>
+
+        <article class="step">
+          <div class="step-num">7</div>
+          <h3>Luôn có nút dừng khẩn cấp</h3>
+          <p>Khi AI gửi sai, chạy vòng lặp, hiểu nhầm lệnh hoặc thao tác ngoài phạm vi, anh chị phải có cách tắt ngay.</p>
+          <div class="action">Việc cần làm: Chuẩn bị quy trình thu hồi quyền, đổi mật khẩu, dừng API, tắt automation và thông báo nội bộ.</div>
+        </article>
+
+        <article class="step">
+          <div class="step-num">★</div>
+          <h3>Nguyên tắc vàng</h3>
+          <p>AI Agent càng mạnh, càng cần giới hạn rõ. Tự động hóa không phải là bỏ mặc, mà là thiết kế hệ thống để con người kiểm soát tốt hơn.</p>
+          <div class="action">Câu nhớ nhanh: “Giao việc cho AI, nhưng giữ quyền quyết định ở con người.”</div>
+        </article>
+      </div>
+
+      <div class="warning">
+        <strong>Cảnh báo:</strong> Không dùng AI Agent để tự động gửi tin nhắn hàng loạt, xử lý tiền, thay đổi dữ liệu khách hàng hoặc xóa file quan trọng nếu chưa có bước duyệt của con người.
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="eyebrow">Tự kiểm tra nhanh</div>
+        <h2>5 câu hỏi trước khi bật AI Agent</h2>
+        <p>Nếu có từ 2 câu trả lời là “chưa”, anh chị chưa nên cho AI Agent vận hành thật.</p>
+      </div>
+
+      <div class="risk-list">
+        <label class="risk-item">
+          <input type="checkbox" />
+          <span>Tôi đã biết rõ AI được phép làm gì và không được phép làm gì.</span>
+        </label>
+        <label class="risk-item">
+          <input type="checkbox" />
+          <span>Tôi đã giới hạn quyền truy cập email, file, tài khoản và dữ liệu khách hàng.</span>
+        </label>
+        <label class="risk-item">
+          <input type="checkbox" />
+          <span>Tôi đã có bước con người duyệt trước khi AI gửi, xóa, sửa hoặc thanh toán.</span>
+        </label>
+        <label class="risk-item">
+          <input type="checkbox" />
+          <span>Tôi có lưu lịch sử thao tác để kiểm tra khi AI làm sai.</span>
+        </label>
+        <label class="risk-item">
+          <input type="checkbox" />
+          <span>Tôi có quy trình dừng khẩn cấp khi AI hoạt động ngoài ý muốn.</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="section" id="prompt">
+      <div class="section-header">
+        <div class="eyebrow">Prompt mẫu</div>
+        <h2>Mẫu lệnh giao việc cho AI Agent an toàn hơn</h2>
+        <p>Anh chị có thể copy mẫu này mỗi khi giao việc cho AI Agent để giảm rủi ro hiểu sai, làm sai hoặc vượt quyền.</p>
+      </div>
+
+      <div class="prompt-box">
+        <h3>Prompt giao việc có kiểm soát</h3>
+        <pre>Vai trò của bạn là trợ lý AI hỗ trợ tôi xử lý công việc.
+
+Mục tiêu:
+[Viết rõ nhiệm vụ cần làm]
+
+Phạm vi được phép:
+- Bạn chỉ được sử dụng những dữ liệu tôi cung cấp trong cuộc trò chuyện này.
+- Bạn không được tự ý gửi email, nhắn tin, xóa file, sửa dữ liệu hoặc thực hiện giao dịch.
+- Nếu cần thao tác ngoài phạm vi, hãy hỏi tôi trước.
+
+Dữ liệu nhạy cảm:
+- Không tiết lộ số điện thoại, email, thông tin khách hàng, doanh thu, hợp đồng hoặc tài khoản nội bộ.
+- Nếu thấy dữ liệu nhạy cảm, hãy cảnh báo trước khi xử lý.
+
+Cách làm:
+1. Tóm tắt lại yêu cầu của tôi.
+2. Nêu kế hoạch xử lý.
+3. Chỉ tạo bản nháp hoặc đề xuất.
+4. Chờ tôi duyệt trước khi thực hiện bước tiếp theo.
+
+Kết quả cần trả về:
+[Viết định dạng mong muốn: bảng, checklist, email draft, kế hoạch, file, nội dung đăng...]</pre>
+      </div>
+    </section>
+
+    <section class="footer-cta">
+      <h2>Muốn nhận thêm bộ mẫu ứng dụng AI Agent cho Sale, Marketing và HR?</h2>
+      <p class="note">Hãy quay lại bài đăng/video và bình luận từ khóa:</p>
+      <div class="keyword">AGENT</div>
+      <p>Văn Nguyễn sẽ gửi thêm tài liệu giúp anh chị dùng AI mạnh hơn, nhanh hơn, nhưng vẫn kiểm soát được rủi ro.</p>
+    </section>
+
+    <div class="footer">
+      © Quà tặng nội dung bởi Văn Nguyễn • Checklist AI Agent an toàn cho doanh nghiệp nhỏ
+    </div>
+  </main>
+</body>
+</html>
